@@ -11,16 +11,16 @@
 
 / {
 	model = "combi";
-	compatible = "combi";
 
 	chosen {
 		zephyr,code-partition = &code_partition;
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
 		zephyr,console = &cdc_acm_uart;
-		zmk,battery = &vbatt;
 		zmk,kscan = &kscan0;
 		zmk,matrix_transform = &default_transform;
+		zmk,battery = &vbatt;
+		
 	};
 
 	default_transform: keymap_transform_0 {
@@ -63,16 +63,25 @@
 	};
 
 	vbatt: vbatt {
-		compatible = "zmk,battery-voltage-divider";
-		label = "BATTERY";
+        compatible = "zmk,battery-voltage-divider";
+        label = "BATTERY";
         io-channels = <&adc 6>;
         output-ohms = <2000000>;
         full-ohms = <(2000000 + 820000)>;
-	};
+    };
 };
 
 &adc {
 	status = "okay";
+};
+
+&usbd {
+	compatible = "nordic,nrf-usbd";
+	status = "okay";
+	cdc_acm_uart: cdc_acm_uart {
+		compatible = "zephyr,cdc-acm-uart";
+		label = "CDC_ACM_0";
+	};
 };
 
 &gpiote {
@@ -86,16 +95,6 @@
 &gpio1 {
 	status = "okay";
 };
-
-&usbd {
-	compatible = "nordic,nrf-usbd";
-	status = "okay";
-	cdc_acm_uart: cdc_acm_uart {
-		compatible = "zephyr,cdc-acm-uart";
-		label = "CDC_ACM_0";
-	};
-};
-
 
 &flash0 {
 	/*
