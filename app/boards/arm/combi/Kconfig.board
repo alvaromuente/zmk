@@ -1,11 +1,15 @@
 # Copyright (c) 2022 Brandon Beltran
 # SPDX-License-Identifier: MIT
 
-config BOARD_COMBI_LEFT
+config BOARD_COMBI
 	bool "combi"
 	depends on SOC_NRF52840_QIAA
 
-config BOARD_COMBI_RIGHT
+config BOARD_COMBI_DONGLE
+	bool "combi"
+	depends on SOC_NRF52840_QIAA
+
+config BOARD_COMBI_PERIPHERAL
 	bool "combi"
 	depends on SOC_NRF52840_QIAA
 
