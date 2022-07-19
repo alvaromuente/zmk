@@ -17,7 +17,7 @@ if BOARD_COMBI_DONGLE
 	default y
 
 	config ZMK_SPLIT
-		default y
+	default y
 
 endif # BOARD_COMBI_DONGLE
 
@@ -27,7 +27,7 @@ if BOARD_COMBI_PERIPHERAL
 	default "combi p"
 	
 	config ZMK_SPLIT
-		default y
+	default y
 
 endif # BOARD_COMBI_PERIPHERAL
 
