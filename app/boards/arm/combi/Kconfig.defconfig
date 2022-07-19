@@ -4,14 +4,14 @@
 if BOARD_COMBI
 
 	config ZMK_KEYBOARD_NAME
-	default "COMBI"
+	default "combi"
 
 endif # BOARD_COMBI
 
 if BOARD_COMBI_DONGLE
 
 	config ZMK_KEYBOARD_NAME
-	default "COMBI L"
+	default "combi d"
 
 	config ZMK_SPLIT_ROLE_CENTRAL
 	default y
@@ -24,7 +24,7 @@ endif # BOARD_COMBI_DONGLE
 if BOARD_COMBI_PERIPHERAL
 
 	config ZMK_KEYBOARD_NAME
-	default "COMBI R"
+	default "combi p"
 	
 	config ZMK_SPLIT
 		default y
@@ -34,7 +34,7 @@ endif # BOARD_COMBI_PERIPHERAL
 if BOARD_COMBI || BOARD_COMBI_DONGLE || BOARD_COMBI_PERIPHERAL
 
 	config BOARD
-		default "COMBI"
+		default "combi"
 
 	if USB_DEVICE_STACK
 
