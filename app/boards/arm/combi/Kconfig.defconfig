@@ -1,25 +1,45 @@
 # Copyright (c) 2022 Brandon Beltran
 # SPDX-License-Identifier: MIT
 
-if BOARD_COMBI
+if BOARD_COMBI_LEFT
 
-config ZMK_KEYBOARD_NAME
-	default "COMBI"
+	config ZMK_KEYBOARD_NAME
+	default "COMBI L"
 
-if USB_DEVICE_STACK
-
-config USB_NRFX
+	config ZMK_SPLIT_ROLE_CENTRAL
 	default y
 
-endif # USB_DEVICE_STACK
+endif # BOARD_COMBI_LEFT
 
-config BT_CTLR
-	default BT
+if BOARD_COMBI_RIGHT
 
-config ZMK_BLE
-	default y
+	config ZMK_KEYBOARD_NAME
+	default "COMBI R"
 
-config ZMK_USB
-	default y
+endif # BOARD_COMBI_LEFT
 
-endif # BOARD_COMBI
+if BOARD_COMBI_LEFT || BOARD_COMBI_RIGHT
+
+	config BOARD
+		default "COMBI"
+
+	config ZMK_SPLIT
+		default y
+
+	if USB_DEVICE_STACK
+
+		config USB_NRFX
+			default y
+
+	endif # USB_DEVICE_STACK
+
+	config BT_CTLR
+		default BT
+
+	config ZMK_BLE
+		default y
+
+	config ZMK_USB
+		default y
+
+endif # BOARD_COMBI_LEFT || BOARD_COMBI_RIGHT

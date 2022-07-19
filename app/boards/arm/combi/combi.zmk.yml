@@ -9,3 +9,6 @@ outputs:
   - usb
   - ble
 url: https://quark.works/
+siblings:
+  - combi_left
+  - combi_right

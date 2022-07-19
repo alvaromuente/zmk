@@ -1,6 +1,6 @@
 identifier: combi
 name: combi
-type: mcu
+type: keyboard
 arch: arm
 toolchain:
   - zephyr
