@@ -4,7 +4,7 @@
 if BOARD_COMBI
 
 config ZMK_KEYBOARD_NAME
-	default "COMBI"
+	default "COMBI V3"
 
 if USB_DEVICE_STACK
 
