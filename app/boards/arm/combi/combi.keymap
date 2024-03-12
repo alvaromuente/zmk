@@ -23,7 +23,7 @@
         compatible = "zmk,combos";
         bootloader {
             timeout-ms = <50>;
-            key-positions = <0 1 2 3>;
+            key-positions = <1 2 3 4>;
 			layers = <3>;
             bindings = <&bootloader>;
         };
@@ -69,8 +69,8 @@
 
 		adjust  {
             bindings = <
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
+                &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &trans &trans &bt BT_CLR
+                &trans &out OUT_USB &out OUT_BLE &trans &trans &trans &trans &trans &trans &trans &trans &trans 
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
